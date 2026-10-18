@@ -1,8 +1,18 @@
-import 'package:flutter/material.dart';
 
-void main() {
+import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Supabase.initialize(
+    url: 'YOUR_SUPABASE_URL',
+    publishableKey: 'YOUR_SUPABASE_PUBLISHABLE_KEY',
+  );
+
   runApp(const DioxivetApp());
 }
+
 
 const navy = Color(0xFF102A43);
 const teal = Color(0xFF18A999);
